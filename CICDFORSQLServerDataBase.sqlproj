@@ -25,7 +25,7 @@
     <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
     <AnsiNulls>False</AnsiNulls>
     <QuotedIdentifier>False</QuotedIdentifier>
-    <TemporalHistoryRetentionEnabled>On</TemporalHistoryRetentionEnabled>
+    <TemporalHistoryRetentionEnabled>Off</TemporalHistoryRetentionEnabled>
     <IsLedgerOn>False</IsLedgerOn>
     <QueryStoreCaptureMode>Auto</QueryStoreCaptureMode>
     <QueryStoreDesiredState>ReadWrite</QueryStoreDesiredState>
@@ -121,5 +121,13 @@
   <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
   <ItemGroup>
     <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Persons.sql">
+      <AnsiNulls>On</AnsiNulls>
+      <QuotedIdentifier>On</QuotedIdentifier>
+    </Build>
   </ItemGroup>
 </Project>
